@@ -1,0 +1,40 @@
+$date
+	Thu Sep 15 09:35:10 2022
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ns
+$end
+$scope module q1a_tb $end
+$var wire 1 ! s $end
+$var wire 1 " Cout $end
+$var reg 1 # x $end
+$var reg 1 $ y $end
+$scope module q1a $end
+$var wire 1 " Cout $end
+$var wire 1 ! s $end
+$var wire 1 # x $end
+$var wire 1 $ y $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+0$
+0#
+0"
+0!
+$end
+#10
+1!
+1$
+#20
+0$
+1#
+#30
+0!
+1"
+1$
+#40
