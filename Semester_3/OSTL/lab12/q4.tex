@@ -1,0 +1,42 @@
+\documentclass{IEEEtran}
+\usepackage{enumerate}
+\usepackage{amsmath}
+\begin{document}
+	\begin{enumerate}[i.]
+		\item $  a_1^2 + b_1^2 = c_1^2 $
+		\item $ \sum_{i=0}^{n}  \sqrt[\leftroot{-1} 3]{\frac{a_i + b_i}{c_i}} $
+	\end{enumerate}
+	\begin{table}[htbp]
+		\begin{tabular}{|c|c|c|c|c}
+			\hline
+			\textbf{Day} & mon & tue & wed & thu & fri\\
+			\hline
+			\textbf{MON} & & & & & & & & & \\ \cline{1-3} \cline{5-5} \cline{7-8} \cline{10-10}
+			
+			\textbf{TUE} & & & & & & & & & \\\cline{1-3} \cline{5-5} \cline{7-8} \cline{10-10}
+			
+			\textbf{WED} & & & & & & & & & \\\cline{1-3} \cline{5-5} \cline{7-8} \cline{10-10}
+			
+			\textbf{THU} & & & & & & & & & \\\cline{1-3} \cline{5-5} \cline{7-8} \cline{10-10}
+			
+			\textbf{FRI} & & & & & & & & & \\\cline{1-3} \cline{5-5} \cline{7-8} \cline{10-10}
+			\hline
+			
+		\end{tabular}
+	\end{table}
+	\begin{algorithm}
+		\KwData{A set $C = \{c_1,c_2,\ldots,c_r\}$ of denominations of coins, where $c_i > c_2 > \ldots > c_r$ and a positive number $n$}
+		\KwResult{A list of coins $d_1,d_2,\ldots,d_k,$ such that $ \sum_{i=1}^{k} d_i = n$ and $k$ is minimized}
+		$C \leftarrow \emptyset;$
+		
+		\For{$i \leftarrow 1$ to $r$}{
+			\While{$n \geq c_i$}{
+				$C \leftarrow C \cap \{c_i\};$
+				
+				$n \leftarrow n - c_i;$
+			}
+		}
+		\Return{C;}
+		\caption{\textsc{Change} Makes change using the smallest number of coins}
+	\end{algorithm}
+\end{document}
