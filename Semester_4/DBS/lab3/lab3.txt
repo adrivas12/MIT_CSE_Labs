@@ -1,0 +1,75 @@
+Q1) 
+select course_id, semester, year from section where year=2009 and semester='Fall' 
+union
+select course_id, semester, year from section where year=2010 and semester='Spring';
+
+Q2) 
+select course_id, semester, year from section where year=2009 and semester='Fall'
+intersect
+select course_id, semester, year from section where year=2010 and semester='Spring';
+
+Q3)
+ select course_id, semester, year from section where year=2009 and semester='Fall'
+ minus 
+select course_id, semester, year from section where year=2010 and semester='Spring';
+
+Q4)
+
+
+Q5)
+ select course_id 
+from section s 
+where semester='Fall' and year=2009 
+	and exists(select course_id 
+			from section r 
+			where semester='Spring' and year=2010 and r.course_id=s.course_id);
+
+Q6)
+ select count(ID) 
+from takes 
+where exists(select ID 
+		from teaches 
+		where teaches.course_id=takes.course_id and teaches.sec_id=takes.sec_id and teaches.year=takes.year and teaches.ID=10101);
+
+Q7)
+select course_id 
+from section 
+where year=2009 and semester='Fall' and not in(select course_id from section where year=2010 and semester='Spring');
+
+Q8)
+select s.name 
+from student s
+ where exists(select i.name from instructor i where i.name=s.name);
+
+Q9)
+select name, salary 
+from instructor 
+where salary >some (select salary from instructor where dept_name='Biology');
+
+Q10)
+select name, salary 
+from instructor 
+where salary > all (select salary from instructor where dept_name='Biology');
+
+Q11)
+select avg(salary) 
+from instructor 
+group by dept_name 
+having (avg(salary))>=all (select avg(salary) from instructor group by dept_name);
+
+Q12)
+select dept_name 
+from department 
+where budget<all(select avg(salary) from instructor);
+
+Q13)
+ select course_id 
+from section r 
+where semester='Fall' and year=2009 and exists(select course_id 
+								from section s 
+								where semester='Spring' and year=2010 and r.course_id=s.course_id);
+
+Q14)
+
+Q15)
+ select course_id from course c where 1<=(select count(course_id) from section s where year=2009 and s.course_id=c.course_id);

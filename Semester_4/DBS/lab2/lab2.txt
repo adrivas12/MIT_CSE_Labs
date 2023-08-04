@@ -1,0 +1,192 @@
+Lab no 2
+
+q1
+create table Employee(EmpNo numeric(4) primary key, EmpName varchar(20) not null, Gender varchar(10) not null, Salary numeric(6) not null, Address numeric(30) not null, DNo date, check(Gender in ('M', 'F')));
+q2
+ create table Department(DeptNo numeric(4) primary key, DeptName varchar(20
+) unique, Location varchar(30));
+q3
+Alter table Employee add constraint fk_dno foreign key(DNo) references Department(DeptNo);
+q4
+insert into Department values(1, 'Sales', 'first floor');
+insert into Department values(2, 'Marketing', 'second floor');
+insert into Department values(3, 'Advertising', 'third floor');
+Select * from Department;
+
+    DEPTNO DEPTNAME             LOCATION
+---------- -------------------- ------------------------------
+         1 Sales                first floor
+         2 Marketing            second floor
+         3 Advertising          third floor
+
+insert into Employee values(101, 'rob', 'M', 30000, 'house1', 1);
+insert into Employee values(102, 'bella', 'F', 40000, 'house2', 1);
+insert into Employee values(103, 'john', 'M', 60000, 'house3', 2);
+insert into Employee values(104, 'jen', 'F', 80000, 'house4', 3);
+
+select * from Employee;
+
+     EMPNO EMPNAME              GENDER         SALARY
+---------- -------------------- ---------- ----------
+ADDRESS                               DNO
+------------------------------ ----------
+       101 rob                  M               30000
+house1                                  1
+
+       102 bella                F               40000
+house2                                  1
+
+       103 john                 M               60000
+house3                                  2
+
+
+     EMPNO EMPNAME              GENDER         SALARY
+---------- -------------------- ---------- ----------
+ADDRESS                               DNO
+------------------------------ ----------
+       104 jen                  F               80000
+house4                                  3
+q5
+. insert into Employee values(101, 'hab', 'R', 50000, 'house1', 1);
+insert into Employee values(101, 'hab', 'R', 50000, 'house1', 1)
+*
+ERROR at line 1:
+ORA-02290: check constraint (DBL44.SYS_C00183407) violated
+q7
+Alter table Employee drop constraint fk_dno;
+Alter table Employee add constraint fk_dno1 foreign key(DNo) references Departmen
+t(DeptNo) on delete cascade;
+
+Table altered.
+
+SQL> delete from Department where DeptNo=1;
+
+1 row deleted.
+
+SQL> select * from Employee;
+
+     EMPNO EMPNAME              GENDER         SALARY
+---------- -------------------- ---------- ----------
+ADDRESS                               DNO
+------------------------------ ----------
+       103 john                 M               60000
+house3                                  2
+
+       104 jen                  F               80000
+house4                                  3
+q8
+ alter table Employee drop column salary;
+ Alter table Employee add constraint default_salary salary number(6) default(10000);
+insert into Employee(EmpNo, EmpName, Gender, Address) values(107, 'rom', 'M', 'house' );
+ insert into Employee(EmpNo, EmpName, Gender, Address) values(107, 'rom', 'M', 'house' );
+
+1 row created.
+
+SQL> select * from Employee
+  2  ;
+
+     EMPNO EMPNAME              GENDER     ADDRESS
+---------- -------------------- ---------- ------------------------------
+       DNO     SALARY
+---------- ----------
+       107 rom                  M          house
+                10000
+
+       103 john                 M          house3
+         2      10000
+
+       104 jen                  F          house4
+         3      10000
+
+ @ "C:\Users\Student\Desktop\210905244\DBS\lab2\University.sql"
+ @ "C:\Users\Student\Desktop\210905244\DBS\lab2\smallRelations.sql"
+q9
+select name, dept_name from student;
+
+NAME                 DEPT_NAME
+-------------------- --------------------
+Zhang                Comp. Sci.
+Shankar              Comp. Sci.
+Brandt               History
+Chavez               Finance
+Peltier              Physics
+Levy                 Physics
+Williams             Comp. Sci.
+Sanchez              Music
+Snow                 Physics
+Brown                Comp. Sci.
+Aoi                  Elec. Eng.
+
+NAME                 DEPT_NAME
+-------------------- --------------------
+Bourikas             Elec. Eng.
+Tanaka               Biology
+
+q10
+select ID, name from instructor where dept_name='Comp. Sci.';
+
+ID    NAME
+----- --------------------
+10101 Srinivasan
+45565 Katz
+83821 Brandt
+
+q11
+select title from course where credits=3 and dept_name='Comp. Sci.';
+
+TITLE
+--------------------------------------------------
+Robotics
+Image Processing
+Database System Concepts
+
+q12
+  select ID, course_id, title from student natural join course where ID =12345;
+
+ID    COURSE_I TITLE
+----- -------- --------------------------------------------------
+12345 CS-101   Intro. to Computer Science
+12345 CS-190   Game Design
+12345 CS-315   Robotics
+12345 CS-319   Image Processing
+12345 CS-347   Database System Concepts
+q13
+select ID, name, salary from instructor where salary>=40000 and salary<=90000;
+
+ID    NAME                     SALARY
+----- -------------------- ----------
+10101 Srinivasan                65000
+12121 Wu                        90000
+15151 Mozart                    40000
+32343 El Said                   60000
+33456 Gold                      87000
+45565 Katz                      75000
+58583 Califieri                 62000
+76543 Singh                     80000
+76766 Crick                     72000
+98345 Kim                       80000
+
+q14
+
+select instructor.ID from instructor where instructor.ID not in (select teaches.ID from teaches);
+
+ID
+-----
+33456
+58583
+76543
+
+q18
+ select ID, name, dept_name from instructor where dept_name like '%ch';
+
+no rows selected
+
+select ID, name, dept_name from instructor where dept_name like '%sic';
+
+ID    NAME                 DEPT_NAME
+----- -------------------- --------------------
+15151 Mozart               Music
+
+q19
+select name, length(name) from student; 
+q20
