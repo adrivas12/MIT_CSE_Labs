@@ -1,14 +1,17 @@
 %{
 	#include <stdio.h>
-	int number = 0; 
+	unsigned int num;
 %}
 %%
-number[0-9]+ {printf("numberjssjsj%x",number); }
+[0-9]+ {num=atol(yytext);printf("%X\n",num);}
+. {}
 %%
-number {printf("numberjssjsj%x",number); }
-int yywrap(){return 1; }
-int main()
-{
-	printf("Enter a numbers: \n"); 
-	yylex();  
+int yywrap(){
+	return 1;
 }
+int main(){
+	yyin=fopen("input.txt","r");
+	yylex();
+	fclose(yyin);
+	return 0;
+} 
