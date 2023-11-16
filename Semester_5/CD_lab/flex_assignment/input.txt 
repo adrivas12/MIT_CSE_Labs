@@ -1,0 +1,12 @@
+class MyClass extends SuperClass {
+    private static int myMethod(int a, boolean flag) {
+        if (a > 10) {
+            return 0;
+        } else {
+            while (a <= 10) {
+                a = a + 1;
+            }
+        }
+        return a;
+    }
+}
