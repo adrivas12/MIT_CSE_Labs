@@ -1,3 +1,6 @@
+// Modify the above Producer-Consumer program so that, a producer can produce at
+//the most 10 items more than what the consumer has consumed.
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <pthread.h>
