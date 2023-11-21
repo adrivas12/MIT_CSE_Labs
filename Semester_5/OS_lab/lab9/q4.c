@@ -13,18 +13,18 @@ void lru(struct page *pages, int next){
 	int i;
 	int flag=0;
 	for(i=0;i<3;i++){
-			if(pages[i].num==next){
-				flag=1;
-				pages[i].ref=1;
-				pages[i].clock=0;
-				hits++;
-				for(int j=0;j<3;j++){
-					if(j!=i){
-						pages[j].clock+=1;
-					}	
-				}
+		if(pages[i].num==next){
+			flag=1;
+			pages[i].ref=1;
+			pages[i].clock=0;
+			hits++;
+			for(int j=0;j<3;j++){
+				if(j!=i){
+					pages[j].clock+=1;
+				}	
 			}
 		}
+	}
 	if(flag==1){
 		return;
 	}
@@ -44,31 +44,31 @@ void lru(struct page *pages, int next){
 			break;
 		}
 	}
-		if(flag==1){
-			return;
-		}
-		else{
-			int clk=0;
-			int rp=0;
-			for(i=0;i<3;i++){
-				if(pages[i].ref==1){
-					pages[i].ref=0;
-				}
-				else{
-					if(pages[i].clock>clk){
-						rp=i;
-						clk=pages[i].clock;
-					}
+	if(flag==1){
+		return;
+	}
+	else{
+		int clk=0;
+		int rp=0;
+		for(i=0;i<3;i++){
+			if(pages[i].ref==1){
+				pages[i].ref=0;
+			}
+			else{
+				if(pages[i].clock>clk){
+					rp=i;
+					clk=pages[i].clock;
 				}
 			}
-			pages[rp].num=next;
-			pages[rp].ref=0;
-			pages[rp].clock=0;
-			for(int j=0;j<3;j++){
-					if(j!=rp){
-						pages[j].clock+=1;
-					}	
-				}
+		}
+		pages[rp].num=next;
+		pages[rp].ref=0;
+		pages[rp].clock=0;
+		for(int j=0;j<3;j++){
+				if(j!=rp){
+					pages[j].clock+=1;
+				}	
+			}
 		}
 	}
 }
