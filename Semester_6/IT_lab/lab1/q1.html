@@ -1,0 +1,77 @@
+<html>
+
+    <style>
+        table, th, td {
+        border:1px solid black;
+        }
+    </style>
+
+    <head>
+        <title>q1</title>
+        <script type= "text/javascript" src = "C:\Users\IT\Desktop\210905244\IT_lab\lab1\jquery-3.7.1.min.js">
+        </script>
+        <script type = "text/javascript" language = "javascript">
+            $(document).ready(function(){
+                $("button").click(function(){
+                    $("div").animate({right:'500px'});
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <div style="position: relative">
+            <table id = "table1" border="1" style="border-collapse: collapse;" align="right">
+                <thead>
+                    <tr>
+                        <th style="color: black; background-color: rgb(119, 119, 196); border: 1.5px solid black;">Country</th>
+                        <th colspan="2" style="color: black; background-color: rgb(119, 119, 196); border: 1.5px solid black;">Student (Name,Roll)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td rowspan="3" style="background-color: rgb(227, 152, 241); text-align: center; border: 1px solid black;">UK</td>
+                        <td style="background-color: lightblue; border: 1px solid black;">Robert</td>
+                        <td style="background-color: rgb(224, 93, 70); border: 1px solid black;">6666</td>
+                    </tr>
+                    <tr>
+                        <td style="background-color: rgb(123, 213, 243); border: 1px solid black;">kellen</td>
+                        <td style="background-color: rgb(199, 233, 146); border: 1px solid black;">5292</td>
+                    </tr>
+                    <tr>
+                        <td style="background-color: lightblue; border: 1px solid black;">bawler</td>
+                        <td style="background-color: rgb(224, 93, 70); border: 1px solid black;">3820</td>
+                    </tr>
+                    
+                    <tr>
+                        <td rowspan="3" style="background-color: rgb(154, 152, 241); text-align: center; border: 1px solid black;">Sweden</td>
+                        <td style="background-color: lightblue; border: 1px solid black;">Robert</td>
+                        <td style="background-color: rgb(224, 93, 70); border: 1px solid black;">6666</td>
+                    </tr>
+                    <tr>
+                        <td style="background-color: rgb(116, 201, 230); border: 1px solid black;">john</td>
+                        <td style="background-color: rgb(167, 238, 149); border: 1px solid black;">3729</td>
+                    </tr>
+                    <tr>
+                        <td style="background-color: rgb(126, 201, 226); border: 1px solid black;">john</td>
+                        <td style="background-color: rgb(191, 231, 138); border: 1px solid black;">3729</td>
+                    </tr>
+                    <tr>
+                        <td rowspan="3" style="background-color: rgb(154, 152, 241); text-align: center; border: 1px solid black;">Sweden</td>
+                        <td style="background-color: lightblue; border: 1px solid black;">Robert</td>
+                        <td style="background-color: rgb(224, 93, 70); border: 1px solid black;">6666</td>
+                    </tr>
+                    <tr>
+                        <td style="background-color: rgb(116, 201, 230); border: 1px solid black;">john</td>
+                        <td style="background-color: rgb(167, 238, 149); border: 1px solid black;">3729</td>
+                    </tr>
+                    <tr>
+                        <td style="background-color: rgb(126, 201, 226); border: 1px solid black;">john</td>
+                        <td style="background-color: rgb(191, 231, 138); border: 1px solid black;">3729</td>
+                    </tr>
+                </tbody>
+            </table>
+            <img src="https://www.designevo.com/res/templates/thumb_small/branch-encircled-book-and-torch-shield.webp" alt="small business" align="right"></img>
+        </div>
+        <button>Click to Shift from right to left</button>
+    </body>
+</html>

@@ -1,0 +1,59 @@
+<html>
+    <head>
+        <title>q3</title>
+        <script type= "text/javascript" src = "C:\Users\IT\Desktop\210905244\IT_lab\lab1\jquery-3.7.1.min.js">
+        </script>
+        <script type = "text/javascript" language = "javascript">
+        $(document).ready(function(){
+            $("#button").click(function(){
+                $(this).val("Stop that!");
+            });
+        });
+        </script>
+    </head>
+    <style>
+        div{
+            background-color: lightyellow;
+            position: relative;
+            text-align: left;
+        }
+    </style>
+    <body>
+        <div class="row" style="display:flex">
+        <div class="choosedesign" style="flex: 50%">
+            <label for="backcolour">Choose background colour:</label><br>
+            <select name="colour" id="colour">
+                <option value="yellow">Yellow</option>
+                <option value="blue">Blue</option>
+                <option value="pink">Pink</option>
+                <option value="orange">Orange</option>
+            </select><br><br>
+            <label for="font">Choose font:</label><br>
+            <select name="font" id="font">
+                <option value="Verdana">Verdana</option>
+            </select><br><br>
+            Specify a numeric font size:<br>
+            <input type="number" name="fontsize"><br><br>
+            Choose a border style :<br>
+            <input type="radio" name="border" value="None">None<br>
+            <input type="radio" name="border" value="Double">Double<br>
+            <input type="radio" name="border" value="Solid">Solid<br><br>
+            <input type="checkbox" name="defaultpic" value="defaultpic" />Add the Default Picture<br><br>
+            Enter the Greeting Text Below:<br>
+            <textarea id="greeting" cols="25" rows="5"></textarea><br><br>
+            <button class = "update" value="update">Update</button>
+
+
+
+        </div>
+        <div style="flex: 50%">2937sif</div>
+        </div>
+        <script>
+            $(document).ready(function(){
+                $("#backcolor").on("select", function(){
+                    $this.css({"background-color":"red"});
+                })
+            })
+        </script>
+    </body>
+</html>

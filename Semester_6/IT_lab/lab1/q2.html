@@ -1,0 +1,72 @@
+<html>
+    <head>
+        <title>q2</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type= "text/javascript" src = "C:\Users\IT\Desktop\210905244\IT_lab\lab1\jquery-3.7.1.min.js">
+        </script>
+        
+    </head>
+    <body>
+        <div style="position: relative">
+            <table>
+                <thead>
+                    <tr>
+                        <th colspan="4">Calculator</th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td colspan="4">
+                            <textarea id="result" cols="12" rows="2"></textarea>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><button class="num" value="0">0</button></td>
+                        <td><button class="num" value="1">1</button></td>
+                        <td><button class="num" value="2">2</button></td>
+                        <td><button class="operator" value="+">+</button></td>
+                    </tr>
+                    <tr>
+                        <td><button class="num" value="3">3</button></td>
+                        <td><button class="num" value="4">4</button></td>
+                        <td><button class="num" value="5">5</button></td>
+                        <td><button class="operator" value="-">-</button></td>
+                    </tr>
+                    <tr>
+                        <td><button class="num" value="6">6</button></td>
+                        <td><button class="num" value="7">7</button></td>
+                        <td><button class="num" value="8">8</button></td>
+                        <td><button class="operator" value="*">*</button></td>
+                    </tr>
+                    <tr>
+                        <td><button class="num" value="9">9</button></td>
+                        <td><button class="operator" value="/">/</button></td>
+                        <td><button class="clear" value="C">C</button></td>
+                        <td><button class="calculate" value="=">=</button></td>
+
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <script type = "text/javascript" language = "javascript">
+            $(document).ready(function(){
+                $(".num").on("click",function(){
+                    $("#result").val($("#result").val()+$(this).val());
+                });
+                $(".operator").on("click",function(){
+                    $("#result").val($("#result").val()+" "+$(this).val() +" ");
+                });
+                $(".clear").on("click", function () {
+                    $("#result").val("");
+                });
+                $(".calculate").on("click",function(){
+                    try {
+                    $("#result").val(eval($("#result").val()));
+                    } catch (e) {
+                    $("#result").val("Error");
+                }
+                });
+            });
+        </script>
+    </body>
+</html>
