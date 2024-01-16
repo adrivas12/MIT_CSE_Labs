@@ -1,0 +1,119 @@
+<!-- 2. Design a web page which shows the database oriented CRUD operation. Consider 
+Employee data. -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Q2</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+    <table class="table table-bordered table-striped">
+        <thead>
+          <tr>
+            <th>S. No.</th>
+            <th>Name</th>
+            <th>Position</th>
+          </tr>
+        
+        </thead>
+        <tbody>
+            <tr>
+              <th scope="row">1</th>
+              <td>Mark</td>
+              <td>Sr. Manager</td>
+            </tr>
+            <tr>
+              <th scope="row">2</th>
+              <td>Jacob</td>
+              <td>HOD</td>
+            </tr>
+            <tr>
+              <th scope="row">3</th>
+              <td>Larry</td>
+              <td>CEO</td>
+            </tr>
+            <tr>
+                <th scope="row">4</th>
+                <td>Mark</td>
+                <td>Sr. Manager</td>
+            </tr>
+            <tr>
+                <th scope="row">5</th>
+                <td>Mark</td>
+                <td>Sr. Manager</td>
+            </tr>
+          </tbody>
+        <tbody id="studentTableBody"></tbody>
+      </table>
+    <div class="container mt-5">
+      <div class="row mb-4">
+        <div class="col-md-6">
+          <h1>Add Employee</h1>
+          <form>
+            <div class="form-group">
+              <label for="employeeName">Name:</label> 
+              <input type="text" class="form-control" id="employeeName" placeholder="Enter name" />
+            </div>
+            <div class="form-group">
+              <label for="employeePosition">Position:</label>
+              <input
+                type="text"
+                class="form-control"
+                id="employeePosition"
+                placeholder="Enter position"
+              />
+            </div>
+            <button type="submit" class="btn btn-primary">Create</button>
+          </form>
+        </div>
+      </div>
+      <h2>Update Employee</h2>
+      <div class="form-group">
+        <label for="exampleFormControlSelect2">Example multiple select</label>
+        <select multiple class="form-control" id="exampleFormControlSelect2">
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+          <option>5</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="employeeName">Enter New Name:</label> 
+        <input type="text" class="form-control" id="employeeName" placeholder="Enter name" />
+      </div>
+      <div class="form-group">
+        <label for="employeePosition">Enter New Position:</label>
+        <input
+          type="text"
+          class="form-control"
+          id="employeePosition"
+          placeholder="Enter position"
+        />
+      </div>
+      <button type="button" class="btn btn-outline-secondary">Update</button>
+      <h2>Delete Employee</h2> 
+      <div class="form-group">
+        <label for="exampleFormControlSelect2">Example multiple select</label>
+        <select multiple class="form-control" id="exampleFormControlSelect2">
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+          <option>5</option>
+        </select>
+      </div>
+      <button type="button" class="btn btn-outline-success">Delete</button> 
+        </div>
+    </div>
+  </body>
+</html>

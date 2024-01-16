@@ -1,0 +1,119 @@
+<!-- Design the student bio-data form using button, label, textbox, radio button, table and checkbox -->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Q1</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link
+            rel="stylesheet"
+            href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    </head>
+    <body>
+        <div class="container-fluid">
+            <h1>Student info</h1>
+            <div>
+                <div class ="form-group">
+                    <label for="studentname">Name:</label>
+                    <input type="text" class="form-control" id="studentname" aria-describedby="namehelp" placeholder="Enter Name">
+
+                </div>
+                <div class="form-group">
+                    <label for="studentregno">Registration Number: </label>
+                    <input type="number" class="form-control" id="studentregno" aria-describedby="regnohelp" placeholder="Enter Registration Number">
+                </div>
+                <div class="form-group">
+                <p>Check your Qualifications</p>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="10th" id="10th" name="qualification">
+                    <label class="form-check-label" for="12th">
+                        10th Grade
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="12th" id="12th" name="qualification">
+                    <label class="form-check-label" for="12th">
+                        12th Grade
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="Bachelor" id="Bachelor" name="qualification">
+                    <label class="form-check-label" for="Bachelor">
+                        Bachelor
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="Masters" id="Masters" name="qualification">
+                    <label class="form-check-label" for="Masters">
+                        Masters
+                    </label>
+                </div>
+                </div>
+                <div class="form-group">
+                <p>Enter your Gender: </p>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="Gender" id="Male" value="Male">
+                    <label class="form-check-label" for="Male">
+                        Male
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="Gender" id="Female" value="Female">
+                    <label class="form-check-label" for="Female">
+                        Female
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="Gender" id="Other" value="Other">
+                    <label class="form-check-label" for="Other">
+                        Other
+                    </label>
+                </div>
+                </div>
+                <button type="button" class="btn btn-primary" id="submitBtn">
+                    Submit
+                </button>
+            </form>
+            <div class="form-group">
+                <label for="exampleFormControlTextarea1">Remarks</label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+            </div>
+            <div class="mt-4">
+                <h2>Student List</h2>
+                <table class="table table-bordered table-striped">
+                  <thead>
+                    <tr>
+                      <th>Name</th>
+                      <th>Reg No</th>
+                      <th>Qualification</th>
+                      <th>Gender</th>
+                    </tr>
+                  </thead>
+                  <tbody id="studentTableBody"></tbody>
+                </table>
+              </div>
+            </div>
+           
+        </div>
+    
+        <script>
+            $(document).ready(function(){
+                $("#submitBtn").on("click", function(){
+                    var name=$("#studentname").val();
+                    var regno=$("#studentregno").val(); 
+                    var quali=$("#input[name='qualification']:checked").val(); 
+                    var gender=$("#input[name='Gender']:checked").val(); 
+                    $("#studentTableBody").append(
+                        "</td><td>" + name + "</td><td>" + regNo + "</td><td>" + quali + "</td><td>" + gender +"</td></tr>"
+                    );
+                    $("#biodataForm")[0].reset();
+                });
+            });
+        </script>
+    </body>
+</html>

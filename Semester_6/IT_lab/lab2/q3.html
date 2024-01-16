@@ -1,0 +1,81 @@
+<!-- 3. Create a web page using bootstrap as mentioned. Divide the page in to 2 parts top and 
+bottom, then divide the bottom into 3 parts and design each top and bottom part using 
+different input groups, input, badges, buttons and button groups. Make the design more 
+attractive.  -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Q1</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="jumbotron">
+        <div align="center">
+          <h1><b>Upper part of page</b><br /></h1>
+          <br />
+
+          <button type="button" class="btn btn-outline-dark">
+            Center Button Button</button
+          ><br /><br />
+        </div>
+      </div>
+    </div>
+
+    <div class="container bg-light text-white">
+      <div class="row">
+        <div class="col">
+          <div class="p-3 mb-2 bg-dark text-white">Submits<br /></div>
+          <br /><br /><br /><br />
+          <button type="button" class="btn btn-outline-dark">
+            Left Button
+          </button>
+        </div>
+
+        <div style="border-left: 1px solid #000; height: 500px"></div>
+        <div class="col">
+          <div class="p-3 mb-2 bg-dark text-white">Badges<br /></div>
+          <br /><br /><br /><br />
+          <div class="btn-group btn-group-toggle" data-toggle="buttons">
+            <label class="btn btn-outline-dark">
+              <input type="radio" id="male" autocomplete="off" checked />Option
+              1
+            </label>
+            <label class="btn btn-outline-dark">
+              <input type="radio" id="female" autocomplete="off" /> Option 2
+            </label>
+          </div>
+        </div>
+
+        <div style="border-left: 1px solid #000; height: 500px"></div>
+        <div class="col">
+          <div class="p-3 mb-2 bg-dark text-white">Options<br /></div>
+          <br /><br /><br /><br />
+          <div class="dropdown">
+            <button
+              class="btn btn-outline-dark dropdown-toggle"
+              type="button"
+              data-toggle="dropdown"
+            >
+              Dropdown
+              <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu">
+              <li>HTML</li>
+              <li>CSS</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
