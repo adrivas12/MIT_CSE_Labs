@@ -1,0 +1,8 @@
+
+q3.out:9192 terminated with signal 11 at PC=7f1f12665573 SP=7fff050789f0.  Backtrace:
+/lib/x86_64-linux-gnu/libc.so.6(+0x65573)[0x7f1f12665573]
+/lib/x86_64-linux-gnu/libc.so.6(__isoc99_scanf+0xb2)[0x7f1f12662142]
+./q3.out(+0x13e4)[0x55a30612d3e4]
+/lib/x86_64-linux-gnu/libc.so.6(+0x29d90)[0x7f1f12629d90]
+/lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0x80)[0x7f1f12629e40]
+./q3.out(+0x1245)[0x55a30612d245]

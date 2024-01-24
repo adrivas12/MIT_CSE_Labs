@@ -1,0 +1,15 @@
+
+q3.out:9377 terminated with signal 11 at PC=7f5379ba0615 SP=7ffc819c5428.  Backtrace:
+/lib/x86_64-linux-gnu/libc.so.6(+0x1a0615)[0x7f5379ba0615]
+/lib/x86_64-linux-gnu/libmpich.so.12(+0x217c7b)[0x7f537a017c7b]
+/lib/x86_64-linux-gnu/libmpich.so.12(+0x234dd8)[0x7f537a034dd8]
+/lib/x86_64-linux-gnu/libmpich.so.12(+0x23530f)[0x7f537a03530f]
+/lib/x86_64-linux-gnu/libmpich.so.12(+0x1832f7)[0x7f5379f832f7]
+/lib/x86_64-linux-gnu/libmpich.so.12(+0x1f09a0)[0x7f5379ff09a0]
+/lib/x86_64-linux-gnu/libmpich.so.12(+0x1f0b13)[0x7f5379ff0b13]
+/lib/x86_64-linux-gnu/libmpich.so.12(+0x1f0d66)[0x7f5379ff0d66]
+/lib/x86_64-linux-gnu/libmpich.so.12(PMPI_Gather+0x552)[0x7f5379e54042]
+./q3.out(+0x155a)[0x55cdb53ee55a]
+/lib/x86_64-linux-gnu/libc.so.6(+0x29d90)[0x7f5379a29d90]
+/lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0x80)[0x7f5379a29e40]
+./q3.out(+0x1225)[0x55cdb53ee225]
