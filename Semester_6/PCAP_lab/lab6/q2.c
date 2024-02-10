@@ -1,0 +1,2 @@
+/*Write an OpenCL program to read an array of N integer values. Sort each element of this
+array in parallel using parallel selection sort and store the result in another array.*/
