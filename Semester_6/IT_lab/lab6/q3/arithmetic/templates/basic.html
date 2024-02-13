@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Calculator</title>
+    <style>
+        /* Styling for the calculator */
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        table {
+            margin: 0 auto;
+        }
+
+        input[type="text"] {
+            width: 100px;
+        }
+    </style>
+</head>
+<body>
+    <h2 >CALCULATOR</h2>
+    <table>
+        <tr>
+            <td>Value 1:</td>
+            <td><input type="text" id="value1"></td>
+        </tr>
+        <tr>
+            <td>Value 2:</td>
+            <td><input type="text" id="value2"></td>
+        </tr>
+        <tr>
+            <td>Operator:</td>
+            <td>
+                <select id="operator">
+                    <option value="add">+</option>
+                    <option value="subtract">-</option>
+                    <option value="multiply">*</option>
+                    <option value="divide">/</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>Result:</td>
+            <td><input type="text" id="result" readonly></td>
+        </tr>
+    </table>
+    <button onclick="calculate()">Calculate</button>
+
+    <script>
+        function calculate() {
+            const value1 = parseInt(document.getElementById("value1").value);
+            const value2 = parseInt(document.getElementById("value2").value);
+            const operator = document.getElementById("operator").value;
+
+            let result;
+            switch (operator) {
+                case "add":
+                    result = value1 + value2;
+                    break;
+                case "subtract":
+                    result = value1 - value2;
+                    break;
+                case "multiply":
+                    result = value1 * value2;
+                    break;
+                case "divide":
+                    result = value1 / value2;
+                    break;
+                default:
+                    result = "Invalid operator";
+            }
+
+            document.getElementById("result").value = result;
+        }
+    </script>
+</body>
+</html>
